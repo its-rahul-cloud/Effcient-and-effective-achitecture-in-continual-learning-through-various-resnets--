@@ -66,7 +66,7 @@ def main():
         raise ValueError('TODO: model {}'.format(args.arch))
     model = nn.DataParallel(model)
     model = model.module.cuda()
-    # print(model)
+    print(model)
 
     # 
     filepath = args.checkpoint_format.format(seed=args.seed, arch=args.arch, \
