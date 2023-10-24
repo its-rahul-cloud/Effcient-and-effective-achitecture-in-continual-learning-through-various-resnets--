@@ -337,7 +337,7 @@ class VResnet(nn.Module):
                                        dilate=replace_stride_with_dilation[0])
         self.layer3 = self._make_layer(block, width_per_group * 4, layers[2], stride=2,
                                        dilate=replace_stride_with_dilation[1])
-        self.layer4 = self._make_layer(block, width_per_group * 4, layers[3], stride=2,
+        self.layer4 = self._make_layer(block, width_per_group * 8, layers[3], stride=2,
                                        dilate=replace_stride_with_dilation[2])
         self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
 
