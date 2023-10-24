@@ -89,9 +89,7 @@ def main():
     manager = Manager(args, model, data_loaders, filepath)
     accuracy = []
     channel = []
-    X=data_loaders
-    y = model(X)
-    make_dot(y.mean(), params=dict(model.named_parameters()), show_attrs=True, show_saved=True)
+   
     for i in range(len(args.taskIDs)):
         task_id = args.taskIDs[i]
         if model.task_exists(task_id):
