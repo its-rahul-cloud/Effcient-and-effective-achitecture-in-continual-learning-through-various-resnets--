@@ -491,6 +491,9 @@ def VResnet2(width_per_group=80) -> VResnet:
 def VResnet3(width_per_group=80) -> VResnet:
     return VResnet(BasicBlock, [2, 1, 1, 2], width_per_group=width_per_group)
 
+def VResnet4(width_per_group=80) -> VResnet:
+    return VResnet(BasicBlock, [4, 1, 1, 4], width_per_group=width_per_group)
+
 
 
 
