@@ -10,7 +10,7 @@ import torch.nn.functional as F
 
 __all__ = ['GEMResNet18', 'ResNet50', 'ResNet', 'resnet18', 'resnet34', 'resnet50', 'resnet101',
            'resnet152', 'resnext50_32x4d', 'resnext101_32x8d',
-           'wide_resnet50_2','VResnet1','VResnet2','VResnet3', 'wide_resnet101_2']
+           'wide_resnet50_2','VResnet1','VResnet2','VResnet3','VResnet4','VResnet5', 'wide_resnet101_2']
 
 
 
@@ -491,12 +491,12 @@ def VResnet2(width_per_group=80) -> VResnet:
 def VResnet3(width_per_group=80) -> VResnet:
     return VResnet(BasicBlock, [2, 1, 1, 2], width_per_group=width_per_group)
 
-def VResnet4(width_per_group=80) -> VResnet:
+def VResnet4(width_per_group=160) -> VResnet:
     return VResnet(BasicBlock, [4, 1, 1, 4], width_per_group=width_per_group)
 
 
-def VResnet5(width_per_group=80) -> VResnet:
-    return VResnet(BasicBlock, [8, 1, 1, 8], width_per_group=width_per_group)
+def VResnet5(width_per_group=360) -> VResnet:
+    return VResnet(BasicBlock, [2, 1, 1, 2], width_per_group=width_per_group)
 
 
 

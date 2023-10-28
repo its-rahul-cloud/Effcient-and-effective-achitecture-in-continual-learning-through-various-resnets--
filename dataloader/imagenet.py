@@ -31,6 +31,8 @@ class RandSplitImageNet:
 
         train_dataset = datasets.ImageFolder(
             traindir,
+            
+            
             transforms.Compose(
                 [
                     transforms.RandomResizedCrop(224),
