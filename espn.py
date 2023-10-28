@@ -101,6 +101,7 @@ def main():
             manager.set_task(task_id)
             summary = manager.validate(task_id)
             accuracy.append(summary['acc'])
+            loss.append(summary['loss'])
             channel.append(channel_count(model))
             continue
         print('Train task {} ...'.format(task_id))
