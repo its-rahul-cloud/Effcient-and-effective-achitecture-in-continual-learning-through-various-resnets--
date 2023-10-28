@@ -246,6 +246,7 @@ class Manager(object):
                 t.update(1)
 
         summary = {
+            'FLOPs':(self.compute_flops()/self.total_flops),
             'loss': loss.avg.item(),
             'acc': 100. * accuracy.avg.item(),
             }

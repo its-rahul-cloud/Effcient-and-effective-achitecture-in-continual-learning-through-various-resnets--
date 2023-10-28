@@ -91,6 +91,8 @@ def main():
     manager = Manager(args, model, data_loaders, filepath)
     accuracy = []
     channel = []
+    loss=[]
+    flops=[]
    
     for i in range(len(args.taskIDs)):
         task_id = args.taskIDs[i]
@@ -128,12 +130,14 @@ def main():
             manager.set_task(args.taskIDs[j])
             summary = manager.validate(args.taskIDs[j])
         accuracy.append(summary['acc'])
+        loss.append(summary['loss'])
+        flops.append(summary['FLOPs'])
 
     print(accuracy)
     print(sum(accuracy)/len(accuracy))
     print(channel)
     plt.figure(figsize=(10,5))
-    plt.title("Accuracy in {}".format(args.dataset))
+    plt.title("Accuracy in {} using {} ".format(args.dataset,args.arch))
     plt.plot(accuracy,label="accuracy")
     #plt.plot(train_losses,label="train")
     plt.xlabel("iterations")
@@ -142,6 +146,16 @@ def main():
     plt.savefig("{}_on_{} .png".format(args.dataset,args.arch))
     plt.show()
 
+
+    plt.figure(figsize=(10,5))
+    plt.title("Loss in {} using {}".format(args.dataset,args.arch))
+    plt.plot(loss,label="Loss")
+    #plt.plot(train_losses,label="train")
+    plt.xlabel("iterations")
+    plt.ylabel("Loss")
+    plt.legend()
+    plt.savefig("{}_Loss_on_{}.png".format(args.dataset,args.arch))
+    plt.show()
 
 
 
