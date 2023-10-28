@@ -3,7 +3,7 @@ import argparse
 
 import torch
 import torch.nn as nn
-
+import matplotlib.pyplot as plt
 import models
 from models import Cell
 from utils.manager import Manager
@@ -130,6 +130,15 @@ def main():
     print(accuracy)
     print(sum(accuracy)/len(accuracy))
     print(channel)
+    plt.figure(figsize=(10,5))
+    plt.title("Accuracy in {}".format(args.dataset))
+    plt.plot(accuracy,label="accuracy")
+    #plt.plot(train_losses,label="train")
+    plt.xlabel("iterations")
+    plt.ylabel("accuracy")
+    plt.legend()
+    plt.show()
+
 
 def channel_count(model):
     all = 0
