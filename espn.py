@@ -137,6 +137,7 @@ def main():
     plt.xlabel("iterations")
     plt.ylabel("accuracy")
     plt.legend()
+    plt.savefig("{}_on_{} .png".format(args.dataset,args.arch))
     plt.show()
 
 
