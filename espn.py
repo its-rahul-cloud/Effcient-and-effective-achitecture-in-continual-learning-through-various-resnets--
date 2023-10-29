@@ -136,6 +136,7 @@ def main():
 
     print(accuracy)
     print(sum(accuracy)/len(accuracy))
+    print(sum(loss)/len(loss))
     print(channel)
     plt.figure(figsize=(10,5))
     plt.title("Accuracy in {} using {} ".format(args.dataset,args.arch))
