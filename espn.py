@@ -140,15 +140,15 @@ def main():
     print(sum(loss)/len(loss))
     print(channel)
     plt.figure(figsize=(10,5))
-    plt.title("Loss and accuracy in {} using {} ".format(args.dataset,args.arch))
-    plt.plot(number_of_tasks,accuracy,label=" accuracy")
+    plt.title(" Accuracy in {} using {} ".format(args.dataset,args.arch))
+    plt.plot(number_of_tasks,accuracy,'o',markevery=accuracy,label='Accuracy of each task')
     #plt.plot(loss,number_of_tasks,label="Loss")
     for i, j in zip(number_of_tasks, accuracy):
         plt.annotate('(%s, %s)' % (i, j), xy=(i, j), textcoords='offset points', xytext=(0,10), ha='center')
 
     #plt.plot(train_losses,label="train")
     plt.xlabel("Task Number")
-    plt.ylabel("Loss vs accuracy")
+    plt.ylabel("Accuracy")
     plt.legend()
     plt.savefig("{}_on_{} .png".format(args.dataset,args.arch))
     plt.show()
