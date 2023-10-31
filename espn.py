@@ -143,32 +143,38 @@ def main():
     raccuracy=[round(number, 2) for number in accuracy]
     naccuracy=np.asarray(raccuracy)
 
-    plt.figure(figsize=(10,5))
-    plt.title(" Accuracy in {} using {} ".format(args.dataset,args.arch))
-    plt.plot(number_of_tasks,accuracy,'-o',markevery=naccuracy,label='Accuracy of each task')
+    plt.figure(figsize=(13,7))
+    plt.title(" Accuracy in {} using {} ".format(args.dataset,args.arch),fontsize=25)
+    plt.plot(number_of_tasks,accuracy,'-o',label='Accuracy of each task')
     #plt.plot(loss,number_of_tasks,label="Loss")
     for i, j in zip(number_of_tasks, raccuracy):
         plt.annotate('(%s, %s)' % (i, j), xy=(i, j), textcoords='offset points', xytext=(0,10), ha='center')
 
     #plt.plot(train_losses,label="train")
-    plt.xlabel("Task Number")
-    plt.ylabel("Accuracy")
+    plt.xlabel("Task Numbers",size=20)
+    plt.ylabel("Accuracy",size=20)
+    plt.xticks(size =15)
+    plt.yticks(size =15)
     plt.legend()
     plt.savefig("{}_on_{} .png".format(args.dataset,args.arch))
     plt.show()
 
+    rloss=[round(number, 2) for number in loss]
+    plt.figure(figsize=(13,7))
+    plt.title(" Accuracy in {} using {} ".format(args.dataset,args.arch),fontsize=25)
+    plt.plot(number_of_tasks,rloss,'-o',label='Loos of each task')
+    #plt.plot(loss,number_of_tasks,label="Loss")
+    for i, j in zip(number_of_tasks, loss):
+        plt.annotate('(%s, %s)' % (i, j), xy=(i, j), textcoords='offset points', xytext=(0,10), ha='center')
 
-    plt.figure(figsize=(10,5))
-    plt.title("Loss in {} using {}".format(args.dataset,args.arch))
-    plt.plot(loss,label="Loss")
     #plt.plot(train_losses,label="train")
-    plt.xlabel("Task Number")
-    plt.ylabel("Loss")
+    plt.xlabel("Task Numbers",size=20)
+    plt.ylabel("L2 Loss",size=20)
+    plt.xticks(size =15)
+    plt.yticks(size =15)
     plt.legend()
-    plt.savefig("{}_Loss_on_{}.png".format(args.dataset,args.arch))
+    plt.savefig("{}_on_{} .png".format(args.dataset,args.arch))
     plt.show()
-
-
 
 def channel_count(model):
     all = 0
