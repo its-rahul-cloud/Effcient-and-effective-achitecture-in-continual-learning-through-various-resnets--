@@ -141,9 +141,9 @@ def main():
     print(channel)
     plt.figure(figsize=(10,5))
     plt.title("Loss and accuracy in {} using {} ".format(args.dataset,args.arch))
-    plt.plot(accuracy,number_of_tasks,label=" accuracy")
+    plt.plot(number_of_tasks,accuracy,label=" accuracy")
     #plt.plot(loss,number_of_tasks,label="Loss")
-    for i, j in zip(accuracy, number_of_tasks):
+    for i, j in zip(number_of_tasks, accuracy):
         plt.annotate('(%s, %s)' % (i, j), xy=(i, j), textcoords='offset points', xytext=(0,10), ha='center')
 
     #plt.plot(train_losses,label="train")
