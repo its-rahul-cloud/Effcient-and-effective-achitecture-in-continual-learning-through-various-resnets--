@@ -8,6 +8,7 @@ import models
 from models import Cell
 from utils.manager import Manager
 from dataloader import RandSplitCIFAR100, RandSplitImageNet, CIFAR10,PermutedMNIST
+import numpy as np
 
 
 parser = argparse.ArgumentParser()
@@ -139,11 +140,14 @@ def main():
     print(sum(accuracy)/len(accuracy))
     print(sum(loss)/len(loss))
     print(channel)
+    raccuracy=[round(number, 2) for number in accuracy]
+    naccuracy=np.asarray(raccuracy)
+
     plt.figure(figsize=(10,5))
     plt.title(" Accuracy in {} using {} ".format(args.dataset,args.arch))
-    plt.plot(number_of_tasks,accuracy,'-o',markevery=accuracy,label='Accuracy of each task')
+    plt.plot(number_of_tasks,accuracy,'-o',markevery=naccuracy,label='Accuracy of each task')
     #plt.plot(loss,number_of_tasks,label="Loss")
-    for i, j in zip(number_of_tasks, accuracy):
+    for i, j in zip(number_of_tasks, raccuracy):
         plt.annotate('(%s, %s)' % (i, j), xy=(i, j), textcoords='offset points', xytext=(0,10), ha='center')
 
     #plt.plot(train_losses,label="train")
