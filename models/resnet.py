@@ -10,7 +10,8 @@ import torch.nn.functional as F
 
 __all__ = ['GEMResNet18', 'ResNet50', 'ResNet', 'resnet18', 'resnet34', 'resnet50', 'resnet101',
            'resnet152', 'resnext50_32x4d', 'resnext101_32x8d',
-           'wide_resnet50_2','VResnet1','VResnet2','VResnet3','VResnet4', 'wide_resnet101_2']
+           'wide_resnet50_2','VResnet1','VResnet2','VResnet3','VResnet4', 'wide_resnet101_2','VResnet1_40','VResnet1_60','VResnet1_80','VResnet2_20',
+           'VResnet2_40','VResnet2_60','VResnet3_40','VResnet3_60','VResnet4_20','VResnet4_40','VResnet4_60']
 
 
 
