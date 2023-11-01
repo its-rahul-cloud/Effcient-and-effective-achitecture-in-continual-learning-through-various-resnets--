@@ -483,13 +483,42 @@ class VResnet(nn.Module):
 def VResnet1(width_per_group=20) -> VResnet:
     return VResnet(BasicBlock, [1, 4, 4, 1], width_per_group=width_per_group)
 
+def VResnet1_40(width_per_group=40) -> VResnet:
+    return VResnet(BasicBlock, [1, 4, 4, 1], width_per_group=width_per_group)
 
-def VResnet2(width_per_group=80) -> VResnet:
+
+def VResnet1_60(width_per_group=60) -> VResnet:
+    return VResnet(BasicBlock, [1, 4, 4, 1], width_per_group=width_per_group)
+
+def VResnet2(width_per_group=20) -> VResnet:
     return VResnet(BasicBlock, [2, 8, 8, 2], width_per_group=width_per_group)
 
+def VResne2_40(width_per_group=40) -> VResnet:
+    return VResnet(BasicBlock, [2, 8, 8, 2], width_per_group=width_per_group)
+
+def VResnet2_60(width_per_group=60) -> VResnet:
+    return VResnet(BasicBlock, [2, 8, 8, 2], width_per_group=width_per_group)
+
+def VResnet3_20(width_per_group=20) -> VResnet:
+    return VResnet(BasicBlock, [2, 1, 1, 2], width_per_group=width_per_group)
+
+def VResnet3_40(width_per_group=40) -> VResnet:
+    return VResnet(BasicBlock, [2, 1, 1, 2], width_per_group=width_per_group)
 
 def VResnet3(width_per_group=80) -> VResnet:
     return VResnet(BasicBlock, [2, 1, 1, 2], width_per_group=width_per_group)
+
+def VResnet3_60(width_per_group=80) -> VResnet:
+    return VResnet(BasicBlock, [2, 1, 1, 2], width_per_group=width_per_group)
+
+def VResnet4_20(width_per_group=20) -> VResnet:
+    return VResnet(BasicBlock, [4, 1, 1, 4], width_per_group=width_per_group)
+
+def VResnet4(width_per_group=80) -> VResnet:
+    return VResnet(BasicBlock, [4, 1, 1, 4], width_per_group=width_per_group)
+
+def VResnet4_60(width_per_group=60) -> VResnet:
+    return VResnet(BasicBlock, [4, 1, 1, 4], width_per_group=width_per_group)
 
 def VResnet4(width_per_group=80) -> VResnet:
     return VResnet(BasicBlock, [4, 1, 1, 4], width_per_group=width_per_group)
